@@ -18,7 +18,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/articleslist' element={<ArticlesList />} />
-          <Route path='/article' element={<Article />} />
+          <Route path='/article/:name' element={<Article />} />
+          {/* one can write /article/:id but the same id||name has to be used inthe article.js page */}
         </Routes>
       </div>
     </Router>
