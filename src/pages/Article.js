@@ -5,6 +5,8 @@ import articleContent from "./article-content";
 
 import Articles from "../components/Articles";
 
+import NotFound from "./NotFound";
+
 const Article = () => {
 
     const {name} = useParams();
@@ -13,7 +15,7 @@ const Article = () => {
 
     if(!article){
         return (
-            <h1>Article does not exist</h1>
+           <NotFound/>
         )
     }
 

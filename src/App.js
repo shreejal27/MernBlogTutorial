@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import ArticlesList from './pages/ArticlesList'
 import Article from './pages/Article'
+import NotFound from './pages/NotFound'
 
 import Navbar from './components/Navbar';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/articleslist' element={<ArticlesList />} />
           <Route path='/article/:name' element={<Article />} />
           {/* one can write /article/:id but the same id||name has to be used inthe article.js page */}
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
     </Router>
