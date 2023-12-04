@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 import articleContent from "./article-content";
+
+import Articles from "../components/Articles";
 
 const ArticlesList = () => {
     return (
@@ -12,20 +14,7 @@ const ArticlesList = () => {
             </p>
             <div>
                 <div>
-                    {articleContent.map((article, index) => (
-                        <div key={index}>
-                            <div>
-                                <Link to={`/article/${article.name}`}>
-                                    <img className="thumbnail" src={article.thumbnail} alt="thumbnail" />
-                                </Link>
-                                <div>
-                                    <h3>{article.title}</h3>
-                                    <p>{article.content[0].substring(0, 150)}...</p>
-                                    <Link to={`/article/${article.name}`}>Read more</Link>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                  <Articles articles={articleContent} />
                 </div>
             </div>
         </div>

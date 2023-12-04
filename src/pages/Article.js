@@ -3,6 +3,8 @@ import {useParams} from "react-router-dom"
 
 import articleContent from "./article-content";
 
+import Articles from "../components/Articles";
+
 const Article = () => {
 
     const {name} = useParams();
@@ -14,6 +16,9 @@ const Article = () => {
             <h1>Article does not exist</h1>
         )
     }
+
+    const otherArticles = articleContent.filter(article => article.name !== name);
+
     return (
         <div>
         <h1>Article</h1>
@@ -22,6 +27,10 @@ const Article = () => {
             <p key={key}>{paragraph}</p>
         ))}
 
+        <h1>Other Articles</h1>
+        <div>
+           <Articles articles={otherArticles} />
+        </div>
         </div>
     );
 }
