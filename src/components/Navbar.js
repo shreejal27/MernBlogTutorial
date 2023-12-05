@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import './Navbar.css'
+
 const Navbar = () => {
     return (
         <nav>
+            <p id='title'>MyBlogs</p>
             <ul>
                 {/* <li><a href="/">Home</a></li> */}
                 <li><Link to="/">Home</Link></li>

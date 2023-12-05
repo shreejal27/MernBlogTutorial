@@ -1,0 +1,52 @@
+/* #DF826C
+   #F8FFD2
+  #D0F288
+  #8ADAB2
+*/
+nav{
+    background-color: #DF826C;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+    margin: 0;
+    margin-top: -15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem;
+}
+
+#title{
+    font-size: 2.2rem;
+    margin: 0;
+    color: #F8FFD2;
+    padding-left: 1rem;
+    margin-top: 0.7rem;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+li{
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.7rem;
+    transition: 0.6s ease;
+}
+
+li>a{
+    text-decoration:none;
+    color: #F8FFD2;
+}
+
+li:hover{
+    background-color: #D0F288;
+    border-radius: 5px;
+}
+
+li:hover a {
+    color: black;
+}
