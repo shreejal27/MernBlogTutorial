@@ -7,6 +7,8 @@ import Articles from "../components/Articles";
 
 import NotFound from "./NotFound";
 
+import './Article.css'
+
 const Article = () => {
 
     const {name} = useParams();
@@ -23,14 +25,15 @@ const Article = () => {
 
     return (
         <div>
-        <h1>Article</h1>
-        <h1>{article.title}</h1>
+        {/* <h1>Article</h1> */}
+        <p className="articleTitle">{article.title}</p>   
+        <img className="hero" src={article.thumbnail} alt="thumbnail" />
         {article.content.map((paragraph, key) => (
-            <p key={key}>{paragraph}</p>
+            <p key={key} className="articleContent">{paragraph}</p>
         ))}
 
-        <h1>Other Articles</h1>
-        <div>
+        <div className="otherArticles">
+        <p className="articleTitle">Other Articles</p>
            <Articles articles={otherArticles} />
         </div>
         </div>

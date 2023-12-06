@@ -1,0 +1,28 @@
+.articles{
+    display:flex;
+    flex-wrap: wrap; 
+    /* for overflow  */
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.articlesContainer{
+    width: 33rem;
+    margin-bottom: 3rem;
+}
+
+.thumbnail{
+     width: 33rem;
+    /* height: 20rem;  */
+    aspect-ratio: 3/2;
+    /* object-fit:fill; */
+}
+
+#readMore{
+    text-decoration: none;
+}
+
+#readMore:hover{
+    text-decoration: underline;
+}
