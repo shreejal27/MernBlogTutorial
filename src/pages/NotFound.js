@@ -1,10 +1,15 @@
 import React from 'react'
 
 const NotFound=()=>{
+    const myComponentStyle = {
+        textAlign: 'center',
+        fontSize: '3rem',
+        marginTop: '12rem',
+     }
     return(
-        <h1> 
+        <p style={myComponentStyle}> 
             404: Page Not Found
-        </h1>
+        </p>
     )
 }
 export default NotFound;
