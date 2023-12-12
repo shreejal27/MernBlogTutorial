@@ -1,5 +1,5 @@
 import React from "react";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 import articleContent from "./article-content";
 
@@ -11,13 +11,19 @@ import './Article.css'
 
 const Article = () => {
 
-    const {name} = useParams();
+    const { name } = useParams();
 
     const article = articleContent.find(article => article.name === name);
 
-    if(!article){
+    const [articleInfo, setArticleInfo] = React.useState({ comments: [] });
+
+    React.useEffect(()=>{
+        console.log("Component Mounted");
+    });
+
+    if (!article) {
         return (
-           <NotFound/>
+            <NotFound />
         )
     }
 
@@ -25,17 +31,17 @@ const Article = () => {
 
     return (
         <div>
-        {/* <h1>Article</h1> */}
-        <p className="articleTitle">{article.title}</p>   
-        <img className="hero" src={article.thumbnail} alt="thumbnail" />
-        {article.content.map((paragraph, key) => (
-            <p key={key} className="articleContent">{paragraph}</p>
-        ))}
+            {/* <h1>Article</h1> */}
+            <p className="articleTitle">{article.title}</p>
+            <img className="hero" src={article.thumbnail} alt="thumbnail" />
+            {article.content.map((paragraph, key) => (
+                <p key={key} className="articleContent">{paragraph}</p>
+            ))}
 
-        <div className="otherArticles">
-        <p className="articleTitle">Other Articles</p>
-           <Articles articles={otherArticles} />
-        </div>
+            <div className="otherArticles">
+                <p className="articleTitle">Other Articles</p>
+                <Articles articles={otherArticles} />
+            </div>
         </div>
     );
 }
