@@ -7,6 +7,8 @@ import Articles from "../components/Articles";
 
 import CommentList from "../components/CommentsList";
 
+import AddCommentForm from "../components/AddCommentForm";
+
 import NotFound from "./NotFound";
 
 import './Article.css'
@@ -47,8 +49,10 @@ const Article = () => {
             {article.content.map((paragraph, key) => (
                 <p key={key} className="articleContent">{paragraph}</p>
             ))}
-    
+
             <CommentList comments={articleInfo.comments} />
+
+            <AddCommentForm articleName={name} setArticleBodyInfo={setArticleInfo} />
 
             <div className="otherArticles">
                 <p className="articleTitle">Other Articles</p>
