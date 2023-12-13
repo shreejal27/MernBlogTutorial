@@ -18,8 +18,15 @@ const Article = () => {
     const [articleInfo, setArticleInfo] = React.useState({ comments: [] });
 
     React.useEffect(()=>{
-        console.log("Component Mounted");
-    });
+        const fetchData = async () => {
+            const result = await fetch(`/api/articles/${name}`);
+            const body = await result.json();
+            console.log(body);
+            setArticleInfo(body);
+        }
+        // console.log("Component Mounted");
+        fetchData();
+    }, [name]);
 
     if (!article) {
         return (
