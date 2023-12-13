@@ -5,6 +5,8 @@ import articleContent from "./article-content";
 
 import Articles from "../components/Articles";
 
+import CommentList from "../components/CommentsList";
+
 import NotFound from "./NotFound";
 
 import './Article.css'
@@ -17,7 +19,8 @@ const Article = () => {
 
     const [articleInfo, setArticleInfo] = React.useState({ comments: [] });
 
-    React.useEffect(()=>{
+
+    React.useEffect(() => {
         const fetchData = async () => {
             const result = await fetch(`/api/articles/${name}`);
             const body = await result.json();
@@ -44,6 +47,8 @@ const Article = () => {
             {article.content.map((paragraph, key) => (
                 <p key={key} className="articleContent">{paragraph}</p>
             ))}
+    
+            <CommentList comments={articleInfo.comments} />
 
             <div className="otherArticles">
                 <p className="articleTitle">Other Articles</p>
